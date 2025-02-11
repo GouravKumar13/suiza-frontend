@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import toast from 'react-hot-toast';
 import { toastStyles } from '../config';
-import { buildPoseidon } from "circomlibjs"
 
 export const generateCodeVerifier = (): string => {
     const array = new Uint8Array(64);
@@ -221,7 +219,7 @@ export const voiceSupport = (messageContent: string) => {
 };
 
 export const generateCommitment = async (data: any) => {
-    const poseidon = await buildPoseidon();
+    let poseidon: any;
     try {
         const values = [
             data.blood_pressure,
